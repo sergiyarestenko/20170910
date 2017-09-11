@@ -2,17 +2,218 @@ html,body{
   background: $bg-body;
   font-family: $font-family-main;
   font-size: $font-size-main;
+  color: $font-black;
+  z-index: 1;
+  min-width: 320px;
 }
 body{
   margin:0 auto;
 }
-ol,ul{
-  font-size:0;
-  padding:0;
+*{
+  box-sizing: border-box;
 }
+ol,ul{
+ list-style: none;
+  padding: 0;
+}
+a, a:hover, a:visited,
+a:focus, a:active{
+  color:inherit;
+  text-decoration: none;
+}
+
+ol,ul{
+  &.inline{
+    li{display: inline-block}
+  }
+}
+p{
+  margin: 0;
+}
+
+h2{
+  font-size:$font-size-h2;
+  font-weight:normal;
+}
+input[type = 'radio']{
+display: none;
+  &+label{
+    cursor: pointer;
+  }
+}
+
+.row{
+  height: 1%;
+  &:after{
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+.float-left{
+  float:left;
+}
+.float-right{
+  float:right;
+}
+
+
 .container{
   margin:0 auto;
   width: 1440px;
   padding:90px;
   padding-top:30px;
 }
+.tit{
+  font-weight:bold;
+  font-size:$font-size-large;
+}
+.dot-line{
+  width: 100%;
+  height: 1px;
+  background: url("../img/dot-line.png");
+}
+
+
+
+.form-inner{
+  padding-right: 30px;
+  padding-left: 30px;
+  margin:10px 0;
+  height: 30px;
+  div{
+    height: 100%;
+  }
+  &.submit-holder{
+    text-align: center;
+    input{
+      height: 35px;
+      border: none;
+      border-radius:18px;
+      box-shadow: 0 1px 2px #1f7f04;
+      color: $bg-white;
+      font-size: 20px;
+      font-weight:bold;
+      padding:0 15px;
+      cursor: pointer;
+      background: #67c022;
+      background: -moz-linear-gradient(top, #67c022 0%, #4aac11 100%);
+      background: -webkit-linear-gradient(top, #67c022 0%,#4aac11 100%);
+      background: linear-gradient(to bottom, #67c022 0%,#4aac11 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#67c022', endColorstr='#4aac11',GradientType=0 );
+        &:hover{
+          box-shadow: 0 1px 2px #333;
+          background: #367004;
+          background: -moz-linear-gradient(top, #367004 0%, #1f5100 100%);
+          background: -webkit-linear-gradient(top, #367004 0%,#1f5100 100%);
+          background: linear-gradient(to bottom, #367004 0%,#1f5100 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#367004', endColorstr='#1f5100',GradientType=0 );
+        }
+    }
+  }
+}
+.area-holder{
+  height: auto;
+}
+div.input-error{
+  position: relative;
+  overflow: hidden;
+}
+span.input-error{
+  position: absolute;
+  right: 10px;
+  top:-15px;
+  color: $font-red;
+  font-size: $font-size-error-msg;
+  transition: $transition-fast ease-out;
+}
+
+.obligation .obligation,
+.incorrect .incorrect{
+  top: 5px;
+}
+
+.input-name{
+  color: $font-grey;
+  line-height: 1.72;
+  .tit{
+    color:$font-black;
+  }
+}
+.input-holder{
+  input,textarea,select,option{
+    width: 100%;
+    height: 100%;
+    border: 1px solid $input-border;
+    border-radius: 5px;
+    transition: $transition-fast ease-out;
+    padding: 5px;
+  }
+  select{
+    background: url(../img/arrow_grey_down.png) 98% 50% no-repeat #fff;
+    padding-right: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+  }
+}
+
+.obligation,
+.incorrect{
+  input,textarea,select,option{
+    border: 1px solid $font-red
+  }
+}
+.mt20{
+  margin-top: 20px;
+}
+.mb20{
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+@media screen and (max-width:1439px){
+  .container{
+    width: 100%;
+    padding-left:5%;
+    padding-right:5%;
+  }
+}
+@media screen and (max-width:1024px){
+  .container{
+
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -18,13 +18,13 @@ gulp.task('css',function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(gulp.dest(config.paths.src +'/css'))//just for controling
-        .pipe(cleancss({compatibility: 'ie8'}))
+        // .pipe(cleancss({compatibility: 'ie8'}))
         .pipe(gulp.dest(config.paths.build +'/stylesheets'))
 });
 
 gulp.task('js',function(){
     return gulp.src(config.paths.js)
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest(config.paths.build + '/js'))
 });
 

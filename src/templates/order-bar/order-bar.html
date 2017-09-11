@@ -1,3 +1,224 @@
-<section class = 'order-bar'>
+<section class = 'order'>
+    <h2>Оформление заказа</h2>
+    <div class = 'row'>
+
+        <div class="order__customers-form float-left">
+                <p class="tit order__customers-form_tit">
+                    Получатель заказа
+                </p>
+                <form id = 'order-customer-form'>
+                    <ul class = 'order__customers-form_labels inline'>
+                        <li>
+                            <input type="radio" name = 'order-customer-buttons' id = 'order-new-customer' checked ='checked'>
+                            <label for="order-new-customer"><span>Я новый покупатель</span></label>
+                        </li><li>
+                            <input type="radio" name = 'order-customer-buttons' id = 'order-registered-customer'>
+                            <label for="order-registered-customer"><span>Я зарегистрированный покупатель</span></label>
+                        </li>
+                    </ul>
+                    <div class="order__customers-form_new shown">
+                        <div class="form-inner">
+                            <div class="row">
+                                <div class="input-name float-left">
+                                    <p>Имя и фамилия</p>
+                                </div>
+                                <div class="input-error input-holder float-left">
+                                    <span class="input-error obligation">Поле обязательно к заполнению</span>
+                                    <input type="text" name="order-new-customer-form-name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-inner">
+                            <div class="row">
+                                <div class="input-name float-left">
+                                    <p>Телефон</p>
+                                </div>
+                                <div class="input-error input-holder float-left">
+                                    <span class="input-error obligation">Поле обязательно к заполнению</span>
+                                    <input type="text" name="order-new-customer-form-phone">
+                                </div>
+                            </div>
+                        </div>
+                         <div class="form-inner">
+                            <div class="row">
+                                <div class="input-name float-left">
+                                    <p>Город</p>
+                                </div>
+                                <div class="input-error input-holder float-left">
+                                    <span class="input-error obligation">Поле обязательно к заполнению</span>
+                                    <input type="text" name="order-new-customer-form-city">
+                                </div>
+                            </div>
+                        </div>
+                         <div class="form-inner">
+                            <div class="row">
+                                <div class="input-name float-left">
+                                    <p>Эл. почта</p>
+                                </div>
+                                <div class="input-error input-holder float-left">
+                                    <span class="input-error obligation">Поле обязательно к заполнению</span>
+                                    <input type="text" name="order-new-customer-form-email">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order__customers-form_registered non-shown">
+                        <div class="form-inner">
+                            <div class="row">
+                                <div class="input-name float-left">
+                                    <p>Эл. почта</p>
+                                </div>
+                                <div class="input-error input-holder float-left">
+                                    <span class="input-error obligation">Поле обязательно к заполнению</span>
+                                    <input type="text" name="order-registered-customer-form-email">
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="form-inner">
+                            <div class="row">
+                                <div class="input-name float-left">
+                                    <p>Пароль</p>
+                                </div>
+                                <div class="input-error input-holder float-left">
+                                    <span class="input-error obligation">Поле обязательно к заполнению</span>
+                                    <input type="text" name="order-registered-customer-password">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-inner area-holder">
+                            <div class="input-holder" id="order-input-holder">
+                                <span id ='order-add-coment'  class = 'shown'>Добавить комментарий к заказу</span>
+                                <span id ='order-del-coment'  class = 'non-shown'>Свернуть комментарий</span>
+                                <textarea name = 'order-comment'></textarea>
+                            </div>
+
+                    </div>
+
+                    <div class="dot-line"></div>
+                    <div class="form-inner mt20">
+                        <div class="row">
+                            <div class="input-name float-left">
+                                <p class="tit">Доставка</p>
+                            </div>
+                            <div class="input-holder float-left">
+                                <select name="order-delivery" id="order-delivery">
+                                    <option selected="selected"></option>
+                                    <option value="NP">«Новая почта» — 25 грн.</option>
+                                    <option value="NP_1">«Новая почта_1» — 20 грн.</option>
+                                    <option value="NP_2">«Новая почта_2» — 15 грн.</option>
+                                    <option value="NP_3">«Новая почта_3» — 10 грн.</option>
+                                    <option value="NP_4">«Новая почта_4» — 250 грн.</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-inner order__customers-form_address mb20">
+                        <div class="row">
+                            <div class="input-name float-left">
+                                <p>Адрес склада</p>
+                            </div>
+                            <div class="input-holder float-left">
+                                <select name="order-delivery-address" id="order-delivery-address">
+                                    <option selected="selected"></option>
+                                    <option value="0">Львов, Отделение №8 (до 30 кг): ул. Гетьмана И. Мазепы, 37</option>
+                                    <option value="1">Львов, Отделение №9 (до 30 кг): ул. Гетьмана И. Мазепы, 37</option>
+                                    <option value="2">Львов, Отделение №10 (до 30 кг): ул. Гетьмана И. Мазепы, 37</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="dot-line"></div>
+                    <div class="form-inner mt20 mb20">
+                        <div class="row">
+                            <div class="input-name float-left">
+                                <p class="tit">Оплата</p>
+                            </div>
+                            <div class="input-holder float-left">
+                                <select name="order-payment" id="order-payment">
+                                    <option selected="selected"></option>
+                                    <option value="0">наложеный платёж</option>
+                                    <option value="1">VISA</option>
+                                    <option value="2">MasterCard</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="dot-line"></div>
+                    <div class="form-inner submit-holder mt20">
+                        <input type="button" value="Оформить заказ" id = 'order-new-customer-form-submit'>
+                    </div>
+
+                </form>
+        </div>
+
+        <div class="order__booking float-right">
+            <p class="tit">
+                Ваш заказ
+            </p>
+
+            <div class="dot-line"></div>
+            <div class="order__booking_item row">
+                <div class="row">
+                    <div class="float-left  order__booking_item-img">
+                        <img src="../img/_5100_kit.png" alt="Цифровий фотоапарат Nikon D5100 kit (18-55 VR)">
+                    </div>
+                    <div class="float-right order__booking_item-desc">
+                        <a href="#"><span>Цифровий фотоапарат Nikon D5100 kit (18-55 VR)</span></a>
+
+                    <ul class="row">
+                        <li class="float-left">6 568 грн. × 1 шт.</li>
+                        <li class = 'float-right'>6 568 грн.</li>
+                    </ul>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+             <div class="dot-line"></div>
+            <div class="order__booking_item">
+                <div class="row">
+                    <div class="float-left order__booking_item-img">
+                        <img src="../img/ipod_blue.png" alt="MP3-плеер Apple iPod Touch 5Gen 32Gb blue">
+                    </div>
+                    <div class="float-right order__booking_item-desc">
+                        <a href="#"><span>MP3-плеер Apple iPod Touch 5Gen 32Gb blue</span></a>
+                        <ul class="row">
+                            <li class="float-left">3 689 грн. × 1 шт.</li>
+                            <li class = 'float-right'>3 689 грн.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="dot-line"></div>
+            <div class="row">
+                <p class="tit float-right">9 769,15 грн.</p>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+    </div>
+
 
 </section>

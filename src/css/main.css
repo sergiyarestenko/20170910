@@ -392,20 +392,319 @@ template {
 html, body {
   background: #f9f7ee;
   font-family: Arial, sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  color: #231f20;
+  z-index: 1;
+  min-width: 320px; }
 
 body {
   margin: 0 auto; }
 
+* {
+  box-sizing: border-box; }
+
 ol, ul {
-  font-size: 0;
+  list-style: none;
   padding: 0; }
+
+a, a:hover, a:visited,
+a:focus, a:active {
+  color: inherit;
+  text-decoration: none; }
+
+ol.inline li, ul.inline li {
+  display: inline-block; }
+
+p {
+  margin: 0; }
+
+h2 {
+  font-size: 32px;
+  font-weight: normal; }
+
+input[type='radio'] {
+  display: none; }
+  input[type='radio'] + label {
+    cursor: pointer; }
+
+.row {
+  height: 1%; }
+  .row:after {
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
 
 .container {
   margin: 0 auto;
   width: 1440px;
   padding: 90px;
   padding-top: 30px; }
+
+.tit {
+  font-weight: bold;
+  font-size: 18px; }
+
+.dot-line {
+  width: 100%;
+  height: 1px;
+  background: url("../img/dot-line.png"); }
+
+.form-inner {
+  padding-right: 30px;
+  padding-left: 30px;
+  margin: 10px 0;
+  height: 30px; }
+  .form-inner div {
+    height: 100%; }
+  .form-inner.submit-holder {
+    text-align: center; }
+    .form-inner.submit-holder input {
+      height: 35px;
+      border: none;
+      border-radius: 18px;
+      box-shadow: 0 1px 2px #1f7f04;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 0 15px;
+      cursor: pointer;
+      background: #67c022;
+      background: linear-gradient(to bottom, #67c022 0%, #4aac11 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#67c022', endColorstr='#4aac11',GradientType=0 ); }
+      .form-inner.submit-holder input:hover {
+        box-shadow: 0 1px 2px #333;
+        background: #367004;
+        background: linear-gradient(to bottom, #367004 0%, #1f5100 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#367004', endColorstr='#1f5100',GradientType=0 ); }
+
+.area-holder {
+  height: auto; }
+
+div.input-error {
+  position: relative;
+  overflow: hidden; }
+
+span.input-error {
+  position: absolute;
+  right: 10px;
+  top: -15px;
+  color: #F6402B;
+  font-size: 10px;
+  transition: 0.5s ease-out; }
+
+.obligation .obligation,
+.incorrect .incorrect {
+  top: 5px; }
+
+.input-name {
+  color: #8d8d8d;
+  line-height: 1.72; }
+  .input-name .tit {
+    color: #231f20; }
+
+.input-holder input, .input-holder textarea, .input-holder select, .input-holder option {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #8d8d8d;
+  border-radius: 5px;
+  transition: 0.5s ease-out;
+  padding: 5px; }
+
+.input-holder select {
+  background: url(../img/arrow_grey_down.png) 98% 50% no-repeat #fff;
+  padding-right: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+.obligation input, .obligation textarea, .obligation select, .obligation option,
+.incorrect input,
+.incorrect textarea,
+.incorrect select,
+.incorrect option {
+  border: 1px solid #F6402B; }
+
+.mt20 {
+  margin-top: 20px; }
+
+.mb20 {
+  margin-bottom: 20px; }
+
+@media screen and (max-width: 1439px) {
+  .container {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%; } }
+
+.order__customers-form, .order__booking {
+  background: #ffffff;
+  border: 1px solid #e0dfca;
+  border-radius: 5px; }
+
+.order__customers-form {
+  margin-top: 60px;
+  position: relative;
+  width: 63%;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  z-index: 2;
+  border-top-left-radius: 0; }
+  .order__customers-form_tit {
+    padding: 0 20px 20px 20px; }
+  .order__customers-form_labels {
+    position: absolute;
+    left: -1px;
+    top: -81px; }
+    .order__customers-form_labels li input[type='radio'] + label {
+      display: block;
+      height: 65px;
+      padding: 15px;
+      border: 1px solid #e0dfca;
+      border-bottom: none;
+      width: 100%; }
+      .order__customers-form_labels li input[type='radio'] + label span {
+        font-size: 14px;
+        font-weight: bold;
+        color: #2073b3;
+        border-bottom: 1px dotted #2073b3; }
+    .order__customers-form_labels li input[type='radio']:checked + label {
+      z-index: 5;
+      background: #ffffff; }
+      .order__customers-form_labels li input[type='radio']:checked + label span {
+        color: #231f20;
+        border: none; }
+    .order__customers-form_labels li:first-child {
+      width: 120px; }
+      .order__customers-form_labels li:first-child input[type='radio'] + label {
+        border-radius: 5px 0 0 0; }
+      .order__customers-form_labels li:first-child input[type='radio']:checked + label {
+        border-right: none; }
+    .order__customers-form_labels li:last-child {
+      width: 200px; }
+      .order__customers-form_labels li:last-child input[type='radio'] + label {
+        border-radius: 0 5px 0 0; }
+      .order__customers-form_labels li:last-child input[type='radio']:checked + label {
+        border-left: none;
+        padding-left: 16px; }
+  .order__customers-form_registered {
+    width: 100%;
+    position: absolute;
+    top: 70px; }
+  .order__customers-form .shown {
+    visibility: visible; }
+    .order__customers-form .shown * {
+      transition: 0s !important; }
+  .order__customers-form .non-shown {
+    visibility: hidden; }
+    .order__customers-form .non-shown * {
+      transition: 0s !important; }
+  .order__customers-form .input-name {
+    width: 20%; }
+  .order__customers-form .input-holder {
+    width: 55%; }
+  .order__customers-form_address .input-holder {
+    width: auto;
+    max-width: 80%; }
+  .order__customers-form .area-holder {
+    margin-top: 50px;
+    position: relative; }
+    .order__customers-form .area-holder span {
+      position: absolute;
+      left: 180px;
+      top: -35px;
+      color: #2073b3;
+      text-decoration: underline;
+      font-size: 14px;
+      cursor: pointer; }
+    .order__customers-form .area-holder .input-holder {
+      width: 510px;
+      height: 0;
+      transition: 0.5s; }
+      .order__customers-form .area-holder .input-holder textarea {
+        height: 0;
+        border: none;
+        opacity: 0;
+        transition: 0.5s;
+        padding: 0; }
+      .order__customers-form .area-holder .input-holder.textarea-shown {
+        height: auto; }
+        .order__customers-form .area-holder .input-holder.textarea-shown textarea {
+          height: 5em;
+          border: 1px solid #8d8d8d;
+          opacity: 1;
+          padding: 5px; }
+
+.order__booking {
+  width: 35%; }
+  .order__booking p.tit {
+    padding: 20px; }
+  .order__booking_item {
+    padding: 0 20px; }
+    .order__booking_item-img:before, .order__booking_item-desc:before {
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      content: ""; }
+    .order__booking_item-img img, .order__booking_item-img a, .order__booking_item-desc img, .order__booking_item-desc a {
+      display: inline-block;
+      vertical-align: middle; }
+    .order__booking_item-img {
+      width: 15%;
+      text-align: center; }
+      .order__booking_item-img img {
+        height: 65px;
+        width: auto; }
+    .order__booking_item-desc {
+      width: 75%;
+      color: #0072bc; }
+      .order__booking_item-desc a span {
+        border-bottom: 1px dotted #0072bc;
+        line-height: 1.5; }
+    .order__booking_item ul li:first-of-type {
+      color: #8d8d8d; }
+    .order__booking_item ul li:last-of-type {
+      color: #231f20;
+      font-weight: bold; }
+
+@media screen and (max-width: 1199px) {
+  .order__customers-form .input-name {
+    width: 30%; }
+  .order__customers-form .input-holder {
+    width: 70%; }
+  .order__customers-form_address .input-holder {
+    max-width: 70%; }
+  .order__customers-form .area-holder .input-holder {
+    width: 100%; } }
+
+@media screen and (max-width: 1023px) {
+  .order__customers-form, .order__booking {
+    float: none;
+    width: 100%; }
+    .order__customers-form .area-holder span, .order__booking .area-holder span {
+      position: absolute;
+      left: 30px; }
+  .order__customers-form {
+    margin-top: 80px; }
+  .order__booking {
+    margin-top: 30px; } }
+
+@media screen and (max-width: 767px) {
+  .order__customers-form .form-inner {
+    height: auto; }
+  .order__customers-form .input-holder.float-left,
+  .order__customers-form .input-name.float-left {
+    float: none;
+    width: 100%; }
+  .order__customers-form_address .input-holder {
+    max-width: 100%; } }
 
 .test {
   border: 1px solid red; }

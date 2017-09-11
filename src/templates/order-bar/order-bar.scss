@@ -1,0 +1,270 @@
+.order{
+ &__customers-form,&__booking{
+    background: $bg-white;
+    border:1px solid $yellow-dots;
+    border-radius: 5px;
+  }
+  &__customers-form{
+    margin-top: 60px;
+    position: relative;
+    width: 63%;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    z-index: 2;
+    border-top-left-radius: 0;
+    &_tit{
+      padding: 0 20px 20px 20px;
+    }
+    &_labels{
+      position: absolute;
+      left: -1px;
+      top:-81px;
+      li{
+        input[type = 'radio']{
+          &+label{
+            display: block;
+            height:65px;
+            padding: 15px;
+            border:1px solid $yellow-dots;
+            border-bottom: none;
+            width: 100%;
+            span{
+              font-size:$font-size-smaller;
+              font-weight:bold;
+              color: $font-blue;
+              border-bottom: 1px dotted $font-blue;
+            }
+          }
+          &:checked+label{
+            z-index: 5;
+            background: $bg-white;
+              span{
+                color: $font-black;
+                border: none;
+              }
+          }
+        }
+        &:first-child{
+          width: 120px;
+          input[type = 'radio'] {
+          &+label{
+            border-radius: 5px 0 0 0;
+          }
+            &:checked+label{
+              border-right: none;
+            }
+        }
+
+        }
+        &:last-child{
+          width: 200px;
+          input[type = 'radio'] {
+            &+label {
+            border-radius: 0 5px 0 0;
+          }
+            &:checked+label{
+              border-left: none;
+              padding-left: 16px;
+            }
+          }
+        }
+      }
+    }
+    &_registered{
+      width: 100%;
+      position: absolute;
+      top:70px;
+    }
+  .shown{
+    visibility: visible;
+    *{
+      transition: 0s !important;
+    }
+  }
+    .non-shown{
+      visibility: hidden;
+      *{
+        transition: 0s !important;
+      }
+    }
+
+    .input-name{
+      width: 20%;
+    }
+    .input-holder{
+      width: 55%;
+    }
+    &_address{
+      .input-holder{
+        width: auto;
+        max-width: 80%;
+      }
+    }
+    .area-holder{
+      margin-top: 50px;
+      position: relative;
+      span{
+       position: absolute;
+       left:180px;
+        top:-35px;
+       color: $font-blue;
+       text-decoration: underline;
+       font-size:$font-size-smaller;
+       cursor: pointer;
+
+      }
+      .input-holder{
+        width: 510px;
+        height: 0;
+        transition: $transition-fast;
+        textarea{
+          height: 0;
+          border: none;
+          opacity: 0;
+          transition: $transition-fast;
+          padding: 0;
+
+        }
+        &.textarea-shown{
+          height: auto;
+          textarea{
+            height: 5em;
+            border: 1px solid $input-border;
+            opacity: 1;
+            padding: 5px;
+          }
+
+        }
+      }
+    }
+  }
+  &__booking{
+    width: 35%;
+
+    p.tit{
+      padding:  20px;
+    }
+
+    &_item{
+      padding:0 20px;
+      &-img,&-desc{
+        &:before {
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+          content: "";
+        }
+        img,a{
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+      &-img{
+        width: 15% ;
+        text-align: center;
+        img{
+          height: 65px;
+          width: auto;
+        }
+
+      }
+      &-desc{
+        width: 75%;
+        color:$font-links;
+        a span{
+          border-bottom: 1px dotted $font-links;
+          line-height:1.5;
+        }
+      }
+      ul{
+        li{
+          &:first-of-type{
+            color: $font-grey;
+          }
+          &:last-of-type{
+            color: $font-black;
+            font-weight:bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:1199px){
+  .order{
+
+    &__customers-form{
+      .input-name{
+        width: 30%;
+      }
+      .input-holder{
+        width: 70%;
+      }
+      &_address{
+        .input-holder{
+
+          max-width: 70%;
+        }
+      }
+      .area-holder{
+        .input-holder{
+          width: 100%;
+        }
+      }
+    }
+    &__booking{
+
+    }
+  }
+}
+@media screen and (max-width:1023px){
+  .order{
+    &__customers-form,&__booking{
+      float: none;
+      width: 100%;
+      .area-holder{
+        span{
+          position: absolute;
+          left:30px;
+
+
+        }
+      }
+    }
+    &__customers-form{
+      margin-top:80px;
+    }
+    &__booking{
+
+      margin-top:30px;
+    }
+}
+}
+@media screen and (max-width:767px){
+  .order{
+    &__customers-form{
+      .form-inner{
+        height: auto;
+      }
+      .input-holder.float-left,
+      .input-name.float-left{
+        float: none;
+        width: 100%;
+      }
+      &_address{
+        .input-holder{
+
+          max-width: 100%;
+        }
+      }
+
+
+
+    }
+
+
+  }
+
+
+}
